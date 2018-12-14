@@ -21,16 +21,15 @@ class App extends Component {
   }
   getInventory() {
     axios.get('/api/inventory')
-      .then(res => this.setState({ inventory: res.data }))
+      .then(res => this.setState({ inventory: res.data }  ))
   }
   render() {
     return (
       <div className="App">
         <Header />
-        {/* <Form getInventory={this.getInventory} />
-        <Dashboard inventory={this.state.inventory} /> */}
+         {/* <Form getInventory={this.getInventory} /> */}
         <Form/>
-        <Dashboard/>
+        <Dashboard inventory={this.state.inventory}/>
       </div>
     );
   }
